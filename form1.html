@@ -1,10 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Welcome to my World</title>
 </head>
 <body>
-$END$
+<form>
+    <fieldset>
+        <legend> Personal Information</legend>
+        First name: <br>
+        <input type="text" name="first name" value="" required><br>
+        <input type="range" name="score" id="score" value="50" min="0" max="100"> <br>
+        Last name: <br>
+        <input type="password" name="psw"> <br><br>
+        <input type="submit" value="Submit">
+        <input type="reset">
+    </fieldset>
+
+</form>
+<form>
+    <input type="radio" name="gender" value="male" checked>Male<br>
+    <input type="radio" name="gender" value="female">Female<br>
+    <input type="radio" name="gender" value="other">Other
+</form> <br> <br>
+<form action="https://www.imdb.com/name/nm0262635/">
+    <fieldset>
+        <legend>Google</legend>
+        <input type="text" name="google">
+        <input type="submit" value="Tìm kiếm">
+    </fieldset>
+
+</form>
 </body>
 </html>
