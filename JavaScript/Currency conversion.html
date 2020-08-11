@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to my World</title>
+</head>
+<body>
+Amount<br><input type="number" id="amount">
+<br>
+<br>
+<form>From Currency<br>
+    <select id="from">
+        <option value="1">VND</option>
+        <option value="23000">USD</option>
+        <option value="212">JPY</option>
+    </select>
+    <br>
+    <br>
+    To Currency<br>
+    <select id="to">
+        <option value="1">VND</option>
+        <option value="23000">USD</option>
+        <option value="212">JPY</option>
+    </select>
+    <input type="button" onclick="convert()" value="Convert">
+    <p id="result"></p>
+</form>
+<script src="PlugJS4.js"></script>
+</body>
+</html>
