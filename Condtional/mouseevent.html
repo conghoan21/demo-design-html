@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to my World</title>
+</head>
+<body>
+<form>
+    <img id="myImage" src="https://assets.adidas.com/images/w_600,f_auto,q_auto/3fcfc247121b48928faeaae201004cab_9366/Uniforia_League_Ball_White_FH7339_01_standard.jpg" />
+    <p>Click button below to move the image to right</p>
+    <input type="button" value="Click Me" onclick="moveRight()" />
+</form>
+<script>
+    let imgObj = null;
+    imgObj = document.getElementById('myImage');
+    function init() {
+        imgObj = document.getElementById('myImage');
+        imgObj.style.position = 'relative';
+        imgObj.style.left = '0px';
+    }
+    function moveRight() {
+        imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+    }
+    window.onload = init;
+</script>
+</body>
+</html>
