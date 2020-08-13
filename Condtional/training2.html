@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to my World</title>
+</head>
+<body>
+<input type="number" id="nhap ngay">
+<button type="button" value="" id="" onclick="day()">Kiem tra</button>
+<p id="hien thi"></p>
+<script>
+    function day(){
+        let a=parseInt(document.getElementById('nhap ngay').value);
+    switch (a) {
+        case 1:
+            document.getElementById('hien thi').innerHTML='chu nhat';
+            break;
+        case 2:
+            document.getElementById('hien thi').innerHTML='thu hai';
+            break;
+        case 3:
+            document.getElementById('hien thi').innerHTML='thu ba';
+            break;
+        case 4:
+            document.getElementById('hien thi').innerHTML='thu tu';
+            break;
+        case 5:
+            document.getElementById('hien thi').innerHTML='thu nam';
+            break;
+        case 6:
+            document.getElementById('hien thi').innerHTML='thu sau';
+            break;
+        case 7:
+            document.getElementById('hien thi').innerHTML='thu bay';
+            break;
+    }
+    }
+</script>
+</body>
+</html>

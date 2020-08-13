@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to my World</title>
+</head>
+<body>
+<fieldset style='width: 50%; margin: auto; text-align: center'>
+    <legend> Giải phương tình bậc 2  </legend>
+    nhập a
+    <input type="number" value="" id="soa"> <br> <br>
+    nhập b
+    <input type="number" value="" id="sob"> <br> <br>
+    nhập c
+    <input type="number" value="" id="soc"> <br> <br>
+    <button type="button" value=""  onclick="goiham()"> Kiểm tra</button>
+    <p id="giatri"></p>
+</fieldset>
+<script>
+    function goiham() {
+        let x = parseInt(document.getElementById("soa").value);
+        let y = parseInt(document.getElementById("sob").value);
+        let z = parseInt(document.getElementById("soc").value);
+        let g = y*y - 4*x*z ;
+        let x2  =  (-y  - Math.sqrt(g))/2*x;
+        let x1  =   (-y + Math.sqrt(g))/2*x;
+        let kep = -y/2*x;
+        if (x===0 )  {
+            document.getElementById("giatri").innerHTML= 'Phương trình có 1 nghiệm' + -y/z;
+        } else if (x===0  && y===0) {
+            document.getElementById("giatri").innerHTML='phương trình vô số nghiệm';
+        }  else if (g>0) {
+            document.getElementById("giatri").innerHTML='phương trinh có 2 nghiệm  :' + x1 +'    '  +x2;
+        }  else if (g===0) {
+            document.getElementById("giatri").innerHTML='phương trình có nghiệm kép x1,x2  :' +kep;
+        } else if (g<0) {
+            document.getElementById("giatri").innerHTML='phương trình vô nghiệm';
+        }
+    }
+</script>
+</body>
+</html>
