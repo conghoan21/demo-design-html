@@ -1,0 +1,10 @@
+img{
+    width: 900px;
+    height: 150px;
+    margin: 0 auto;
+}
+.background{
+    margin: 0 auto;
+    width: 900px;
+    height: 100%;
+}
