@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<h1>Bảng cửu chương</h1>
+<script>
+    let sout = "";
+    sout = "<table border='1'  width='75%' cellspacing='0' cellpadding='3'>";
+    for (i = 2; i <= 10; i++) {
+        sout += '<tr>';
+        for (j = 1; j <= 10; j++) {
+           if ((i*j)%2==0){
+               sout +=  '<td>' + i + 'x' + j + '=' +'<strong>' + (i * j) + '</strong>' + '</td>';
+           } else{
+               sout +=  '<td>' + i + 'x' + j + '=' + (i * j)  + '</td>';
+           }
+        }
+        sout += '</tr>';
+    }
+    sout += '</table>';
+    document.write(sout);
+</script>
 </body>
 </html>

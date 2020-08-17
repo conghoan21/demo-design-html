@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
+<h2>JavaScript loop</h2>
+<p id="demo"></p>
 <body>
-$END$
+<script>
+    let i=0;
+    let text='';
+    for (i;i<5;i++){
+        text += 'The number is ' + i + '<br>';
+    }
+    document.getElementById('demo').innerHTML=text;
+</script>
 </body>
 </html>
