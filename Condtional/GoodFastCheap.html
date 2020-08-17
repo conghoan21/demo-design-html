@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FastCheapGood</title>
+    <style>
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        #good:checked + .slider {
+            background-color: #7CFC00;
+        }
+
+        #good:focus + .slider {
+            box-shadow: 0 0 1px #7CFC00;
+        }
+
+        #cheap:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        #cheap:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        #fast:checked + .slider {
+            background-color: #B22222;
+        }
+
+        #fast:focus + .slider {
+            box-shadow: 0 0 1px #B22222;
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<label class="switch">
+    <input type="checkbox" id="good" onclick="check('good')">
+    <span class="slider round"></span>
+</label> <span> Good</span>
+<br> <br>
+<label class="switch">
+    <input type="checkbox" id="cheap" onclick="check('cheap')">
+    <span class="slider round"></span>
+</label>  <span> Cheap</span>
+<br> <br>
+<label class="switch">
+    <input type="checkbox" id="fast" onclick="check('fast')">
+    <span class="slider round"></span>
+</label> <span> Fast</span>
+</body>
+</html>
+<script>
+
+    function check(element) {
+        let isGood = document.getElementById("good").checked;
+        let isCheap = document.getElementById("cheap").checked;
+        let isFast = document.getElementById("fast").checked;
+        switch (element) {
+            case "good":
+                if (isGood  && isCheap) document.getElementById("fast").checked = false;
+                break;
+            case "fast":
+                if (isGood && isFast) document.getElementById("cheap").checked = false;
+                break;
+            case "cheap":
+                if (isCheap && isFast) document.getElementById("good").checked = false;
+                break;
+        }
+    }
+    // function checkGood() {
+    //     let isGood = document.getElementById("good").checked;
+    //     let isCheap = document.getElementById("cheap").checked;
+    //     let isFast = document.getElementById("fast").checked;
+    //     if (isGood  && isCheap) document.getElementById("fast").checked = false;
+    // }
+    // function checkCheap() {
+    //     let isGood = document.getElementById("good").checked;
+    //     let isCheap = document.getElementById("cheap").checked;
+    //     let isFast = document.getElementById("fast").checked;
+    //     if (isCheap && isFast) document.getElementById("good").checked = false;
+    // }
+    // function checkFast() {
+    //     let isGood = document.getElementById("good").checked;
+    //     let isCheap = document.getElementById("cheap").checked;
+    //     let isFast = document.getElementById("fast").checked;
+    //     if (isGood && isFast) document.getElementById("cheap").checked = false;
+    // }
+</script>
+</body>
+</html>

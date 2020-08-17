@@ -1,0 +1,9 @@
+button{
+    position: absolute;
+}
+.btnYes{
+    left:100px;
+}
+.btnNo{
+    left: 200px;
+}
