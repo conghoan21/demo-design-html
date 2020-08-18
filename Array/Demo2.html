@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Demo</title>
 </head>
 <body>
-$END$
+<script>
+    let number = [1, 5, 10, 25, 50, 100];
+    let i = 0;
+    number.sort(function (a, b) {
+        return b - a
+    });
+    for (; i < number.length; i++) {
+        console.log(i + '__' + number[i]);
+    }
+</script>
 </body>
 </html>
