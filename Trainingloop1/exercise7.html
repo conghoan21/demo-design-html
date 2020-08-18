@@ -5,6 +5,17 @@
     <title>Exercise 7</title>
 </head>
 <body>
-
+<script>
+    let i = 1;
+    for (; i < 100; i++) {
+        if (i%3===0 && i%5===0){
+            document.write('FizzBuzz' + i + '<br>');
+        } else if (i%3===0){
+            document.write('Fizz' + i + '<br>');
+        } else if (i%5===0){
+            document.write('Buzz' + i + '<br>');
+        }
+    }
+</script>
 </body>
 </html>
