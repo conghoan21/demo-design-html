@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo 5</title>
+</head>
+<body>
+<script>
+    const array=[{
+        'id': 1,
+        'address': 'Hà Nội',
+        'name': 'Nguyễn Văn A',
+    },
+        {
+            'id': 2,
+            'address': 'HCM',
+            'name': 'Nguyễn Văn B'
+        }
+    ]
+    let newarray=array.map(function (array2) {
+        if (array2.id==1){
+            array2.name='Nguyễn Văn C';
+        }
+        return array2;
+    })
+    console.log(newarray);
+</script>
+</body>
+</html>

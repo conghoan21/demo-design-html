@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array Theory</title>
+</head>
+<body>
+<button type="button" onclick="getAllStudent()">Lay danh sach</button>
+<button type="button" onclick="showAllStudent()">Lay danh sach</button>
+<button type="button" onclick="getAverage()">Diem trung binh</button>
+<button type="button" onclick="addNewStudent()">Them moi phan tu</button>
+<script>
+    let studentList = ["Nguyễn Hoàng Minh",
+        "Nguyễn Linh Chi",
+        "Đào Công Hoàn",
+        "Đỗ Quốc Việt"];
+    let markList=["a", "b", "c", "d"]
+    markList.sort(function (a, b) {
+        return b-a;
+    })
+    let totalStudent = 5;
+    function showAllStudent() {
+        alert(studentList.toString())
+    }
+    function addNewStudent() {
+        let studentName = prompt("Nhập vào tên HV");
+        studentList[studentList.length] = studentName;
+        // studentList.push(studentName) ;
+        // for(let i = 0; i <5; i++){
+        //     let studentName = prompt("Nhập vào tên HV");
+        //     studentList[i] = studentName;
+        // }
+    }
+    function getAllStudent() {
+        // for (let i =0; i<studentList.length; i++){
+        //     document.writeln("Họ và tên học viên thứ " + (i+1) +" :"+ studentList[i]+'<br>');
+        // }
+        // studentList.forEach(
+        //     function (i) {
+        //         document.writeln("Họ và tên học viên: "
+        //             +  i +'<br>');
+        //     }
+        // )
+        for(let student in studentList){
+            document.writeln("Họ và tên học viên: "
+                +  studentList[student] +'<br>');
+        }
+    }
+    function getAverage() {
+        let sum = 0;
+        for (let i=0; i<markList.length; i++){
+            sum += markList[i];
+        }
+        document.write("diem trung binh bang " + sum/(markList.length) )
+    }
+</script>
+</body>
+</html>

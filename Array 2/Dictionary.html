@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Dictionary</title>
+</head>
+<body>
+<script>
+    let str=prompt('Write something, Please!');
+    let english=['hello','goodbye','i love you','i hate you','i beg you','i need you'];
+    let vietnamese=['xin chào','tạm biệt','anh yêu em','anh ghét em','anh xin em','anh cần em'];
+        if(english.indexOf(str) !==-1){
+            console.log(vietnamese[english.indexOf(str)]);
+        }
+        else if(vietnamese.indexOf(str) !==-1) {
+            console.log(english[vietnamese.indexOf(str)]);
+        }
+        else {
+            console.log('Vui lòng nhập lại');
+        }
+
+
+</script>
+</body>
+</html>
