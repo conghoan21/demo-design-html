@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 5</title>
+</head>
+<body>
+<script>
+    let soam=[];
+    let count=0;
+    let num=prompt('Số phần tử muốn nhập: ');
+    for(let i=0;i<num;i++) {
+        soam[i] = prompt('Nhập vào phần tử' + (i + 1));
+    }
+    for(let i=0;i<soam.length;i++){
+        if (soam[i]<0) {
+            count += 1;
+        }
+    }
+    console.log(count);
+</script>
+</body>
+</html>

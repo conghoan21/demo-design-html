@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 7</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let t;
+
+    t = "Các phần tử đã nhập là: <br>";
+    for (let i = 0; i < 10; i++) {
+        arr[i] = parseInt(prompt("Nhập phần tử thứ " + (i + 1)));
+        t += "Phần tử thứ " + (i + 1) + ": " + arr[i] + "<br>";
+    }
+
+    let V = parseInt(prompt("Nhập số V: "));
+    if (arr.indexOf(V) !== -1) {
+        for (let i = arr.indexOf(V); i < arr.length - 1; i++) {
+            arr[i]=arr[i+1];
+        }
+        arr[length-1]=0;
+        t+="<br>Mảng sau khi xoá V là: <br>"
+        for (let i = 0; i < 9; i++) {
+            t += "Phần tử thứ " + (i + 1) + ": " + arr[i] + "<br>";
+        }
+    } else t += "V is not in the array";
+
+    document.write(t);
+</script>
+</body>
+</html>

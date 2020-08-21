@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 6</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let t;
+
+    t="Các phần tử đã nhập là: <br>";
+    for(let i=0;i<10;i++){
+        arr[i] = parseInt(prompt("Nhập phần tử thứ "+(i+1)));
+        t+="Phần tử thứ "+(i+1)+": "+arr[i]+"<br>";
+    }
+
+    let V = parseInt(prompt("Nhập số V: "));
+    if(arr.includes(V)){
+        t+="V is in the array";
+    } else t+="V is not in the array";
+    document.write(t);
+</script>
+</body>
+</html>

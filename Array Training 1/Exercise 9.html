@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 9</title>
+</head>
+<body>
+<script>
+    let arrA = [];
+    let arrB = [];
+    let t;
+
+
+    t = "Các phần tử của mảng A đã nhập là: <br>";
+    for (let i = 0; i < 10; i++) {
+        arrA[i] = parseInt(prompt("Nhập phần tử thứ " + (i + 1)));
+        t += "Phần tử thứ " + (i + 1) + ": " + arrA[i] + "<br>";
+    }
+
+    t += "<br>Các phần tử của mảng B đã nhập là: <br>";
+    for (let i = 0; i < 10; i++) {
+        arrB[i] = parseInt(prompt("Nhập phần tử thứ " + (i + 1)));
+        t += "Phần tử thứ " + (i + 1) + ": " + arrB[i] + "<br>";
+    }
+
+    t+= "<br>Các phần tử của mảng C là: <br>"
+    let arrC = arrB.concat(arrA);
+    for (let i = 0; i < arrC.length; i++) {
+        t += "Phần tử thứ " + (i + 1) + ": " + arrC[i] + "<br>";
+    }
+
+    document.write(t);
+</script>
+</body>
+</html>

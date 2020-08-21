@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 8</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let t;
+
+
+    t = "Các phần tử của mảng đã nhập là: <br>";
+    for (let i = 0; i < 10; i++) {
+        arr[i] = parseInt(prompt("Nhập phần tử thứ " + (i + 1)));
+        t += "Phần tử thứ " + (i + 1) + ": " + arr[i] + "<br>";
+    }
+
+
+
+    t += "<br>Mảng sau khi sắp xếp là: <br>";
+    arr.sort(function (a, b) {
+        return b - a;
+    });
+
+    for (let i = 0; i < arr.length; i++) {
+        t += "Phần tử thứ " + (i + 1) + ": " + arr[i] + "<br>";
+    }
+    document.write(t);
+</script>
+</body>
+</html>
