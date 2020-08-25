@@ -22,7 +22,7 @@
     }
 // Tạo hàm vẽ bảng
     function drawTable() {
-        let t = "<table>";
+        let t = "<table border='1px'>";
 
         for (let i = 0; i < productList.length; i++) {
             t += "<tr>";
@@ -43,9 +43,12 @@
     }
 // Tạo hàm xóa sản phẩm
     function deleteProduct(element) {
-        productList.splice(element,1);
-        drawTable();
-    }
+        if (confirm('Are you sure>')){
+            productList.splice(element,1);
+            drawTable();
+        }
+        }
+
 </script>
 </body>
 </html>
