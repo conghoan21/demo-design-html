@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drawline</title>
+</head>
+<body>
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+    // TÌm đến thẻ canvas thông qua id='myCanvas'
+    let c = document.getElementById("myCanvas");
+    // Dùng hàm getContext() để vẽ nhiều hình ảnh như: hcn, hình tròn, hình vuông.....
+    let ctx = c.getContext("2d");
+    // Định điểm bắt đầu
+    ctx.moveTo(0, 0);
+    // Định điểm kết thúc
+    ctx.lineTo(200, 100);
+    // Hàm này để vẽ 1 đường thẳng
+    ctx.stroke();
+</script>
+</body>
+</html>

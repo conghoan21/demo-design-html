@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class & Object</title>
+</head>
+<body>
+<script>
+    function Student(id, name, address) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        // Phương thức getInfor trả về thông tin của đối tượng
+        this.getInfor = function () {
+            return "id=" + this.id + " name=" + this.name + " address=" + this.address;
+        }
+    }
+
+    // khởi tạo đối tượng student bằng new Student()
+    let student = new Student(1, 'Nguyen Van A', 'Ha Noi');
+    // thực thi getInfor thông qua đối tượng student
+    console.log(student.getInfor());
+</script>
+</body>
+</html>

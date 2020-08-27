@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class & Object 2</title>
+</head>
+<body>
+<script>
+    let student = {
+        id: 1,
+        name: 'Nguyễn Văn A',
+        address: 'Hà Nội',
+        // getInfor trả về thông tin của đối tượng
+        getInfor: function (){
+            return "id=" + this.id + "name=" + this.name + "address=" + this.address;
+        }
+    }
+    // Gọi thuộc tính và phương thức thông qua đối tượng student
+    console.log(student.name);
+    console.log(student.getInfor());
+</script>
+</body>
+</html>

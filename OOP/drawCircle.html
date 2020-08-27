@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Draw Circle</title>
+</head>
+<body>
+<canvas id="myCanvas" width="200" height="100" style="border: 1px solid black"></canvas>
+</body>
+<script>
+    let c=document.getElementById("myCanvas");
+    let ctx=c.getContext("2d");
+    // Bắt đầu một đường dẫn hoặc đặt lại đường dẫn
+    ctx.beginPath();
+    // Hàm arc dùng để vẽ hình tròn
+    ctx.arc(100,50,50,0,2*Math.PI);
+    ctx.stroke();
+</script>
+</html>

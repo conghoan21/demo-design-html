@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object in javascript</title>
+</head>
+<body>
+<script>
+    // Thành phần dữ liệu hay còn gọi là thuôc tính của đối tượng
+    let person = {
+        //name: ['Jack', 'Micheal'],
+        name: {
+            first: 'Jack',
+            last: 'Micheal'
+        },
+        age: 32,
+        gender: "Male",
+        interest: ["Mucsic", "Sport"],
+
+        // Thành phần sau là các "hàm" cho phép đối tượng thao tác với các thành phần của dữ liệu(thuộc tính) và goi là
+        // phương thức(method)
+        // Trả về thông tin đối tượng
+        bio: function () {
+            console.log(this.name.first + ' and ' + this.name.last + ' are ' + this.age + ' years old. They like ' + this.interest[0] + ' and ' + this.interest[1] + '.');
+        },
+        // Trả về thông tin đối tượng
+        greeting: function () {
+            console.log('Hi. I am ' + this.name.first + '.');
+        }
+    };
+
+    // Bổ xung tên và giá trị mới cho đối tượng person
+    let myDataName = 'height';
+    let myDataValue = '1.75m';
+    person[myDataName] = myDataValue;
+
+    // bổ xung thuộc tính
+    person.eye="hazel";
+
+    // bổ xung thêm phương thức
+    person.farewell= function() {console.log("Bye Everybody")}
+
+    // Truy xuất thuộc tính và phương thức
+    // console.log(person.name.first);
+    console.log(person['name']['first']);
+    console.log(person['eye']);
+    console.log(person.height);
+    person.bio();
+    person.greeting();
+    person.farewell();
+</script>
+</body>
+</html>
