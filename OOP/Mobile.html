@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Mobile = function (battery, name) {
+        this.name = name;
+        this.battery = battery;
+        this.draftMessage = [];
+        this.inboxMessage = [];
+        this.sentMessage = [];
+        this.isOn = false;
+
+        this.powerBtn = function () {
+            this.isOn = !this.isOn;
+        };
+
+        this.recharge = function () {
+            this.battery = 100;
+        }
+
+        this.writeMessage = function (message) {
+            this.draftMessage.push(message);
+            this.battery--;
+        }
+
+        this.receiveMessage = function (message) {
+            this.inboxMessage.push(message);
+            this.battery--;
+        }
+
+        this.sendMessage = function (other) {
+            if (confirm("Message will sent to " + other.name)) {
+                let message = this.draftMessage.pop();
+                other.receiveMessage(message);
+                this.battery--;
+            }
+        }
+
+        this.showInboxMassage = function () {
+            this.battery--;
+            if(this.inboxMessage.length===0){
+                return "Empty!";
+            }
+            let rs="";
+            for(let i=0;i<this.inboxMessage.length;i++){
+                rs+=this.inboxMessage[i]+"<br>";
+            }
+            return rs;
+        }
+
+        this.showSentMessage = function () {
+            this.battery--;
+            if(this.sentMessage.length===0){
+                return "Empty!";
+            }
+            let rs="";
+            for(let i=0;i<this.sentMessage.length;i++){
+                rs+=this.sentMessage[i]+"<br>";
+            }
+            return rs;
+        }
+    }
+
+    let nokia = new Mobile(100, "Nokia");
+    let iPhone = new Mobile(0, "iPhone");
+    if(nokia.battery===0){
+        nokia.recharge();
+    }
+    if(!nokia.isOn){
+        nokia.powerBtn();
+    }
+    if(iPhone.battery===0){
+        iPhone.recharge();
+    }
+    if(!iPhone.isOn){
+        iPhone.powerBtn();
+    }
+
+    let message = prompt("Enter message:");
+    nokia.writeMessage(message);
+    nokia.sendMessage(iPhone);
+    document.write(iPhone.showInboxMassage());
+</script>
+</body>
+</html>

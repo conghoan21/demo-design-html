@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature</title>
+</head>
+<body>
+<script>
+    let Temperature = function (celsius) {
+        this.celsius = celsius;
+// Tạo phương thức chỉnh sửa độ C
+        this.setCelsius = function (celsius) {
+            this.celsius = celsius;
+        }
+// Đưa ra giá trị của độ C
+        this.getCelsius = function () {
+            return this.celsius;
+        }
+
+        this.toFahrenheit = function () {
+            return this.celsius * 9 / 5 + 32;
+        }
+
+        this.toKenvin = function () {
+            return this.celsius + 273.15;
+        }
+    }
+
+    let temperature = new Temperature();
+    let celsius=prompt('Nhập vào độ C');
+    temperature.setCelsius(celsius);
+    alert("F: " + temperature.toFahrenheit());
+    alert("K: " + temperature.toKenvin());
+</script>
+</body>
+</html>
