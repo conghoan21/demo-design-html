@@ -7,26 +7,52 @@
 <body>
 <canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
 <script>
-    function Rectangle(width,height){
-        this.width=width;
-        this.height=height;
+    let Rectangle = function (width, height) {
+        this.width = width;
+        this.height = height;
+
+        this.setWidth = function (width) {
+            this.width = width;
+        }
+
+        this.getWidth = function () {
+            return this.width;
+        }
+
+        this.setHeight = function (height) {
+            this.height = height;
+        }
+
+        this.getHeight = function () {
+            return this.height;
+        }
+
+        this.rectPerimeter = function () {
+            return (this.height + this.width) * 2;
+        }
+
+        this.rectArea = function () {
+            return this.width * this.height;
+        }
+        this.showRectangle = function () {
+            let ctx = document.getElementById("myCanvas").getContext("2d");
+            ctx.moveTo(0, 0);
+            ctx.lineTo(this.width, 0);
+            ctx.lineTo(this.width, this.height);
+            ctx.lineTo(0, this.height)
+            ctx.lineTo(0, 0);
+            ctx.fillStyle = "blue";
+            ctx.fill();
+        }
     }
-    function calculatePerimeter(width,height){
-        let primeter=(height+width)*2;
-        return primeter;
-    }
-    function calculateArea(width,height){
-        let area=height*width;
-        return area;
-    }
-    function creatRectangle(){
-        let ctx = document.getElementById("myCanvas").getContext("2D");
-        let grd = ctx.createLinearGradient(0,0,200,0);
-        grd.addColorStop(0,"red");
-        grd.addColorStop(1,"white");
-        ctx.fillStyle = grd;
-        ctx.fillRect(10,10,150,80);
-    }
+    let rectangle = new Rectangle;
+    let rectWidth = prompt("Enter the width:");
+    rectangle.setWidth(rectWidth);
+    let rectHeight = prompt("Enter the height:");
+    rectangle.setHeight(rectHeight);
+    rectangle.showRectangle();
+    document.write(rectangle.rectArea());
+    document.write(rectangle.rectPerimeter());
 </script>
 </body>
 </html>
