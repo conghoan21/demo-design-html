@@ -6,31 +6,67 @@
 </head>
 <body>
 <script>
-    let Temperature = function (celsius) {
-        this.celsius = celsius;
-// Tạo phương thức chỉnh sửa độ C
-        this.setCelsius = function (celsius) {
-            this.celsius = celsius;
-        }
-// Đưa ra giá trị của độ C
-        this.getCelsius = function () {
-            return this.celsius;
-        }
+//     let Temperature = function (celsius) {
+//         this.celsius = celsius;
+// // Tạo phương thức chỉnh sửa độ C
+//         this.setCelsius = function (celsius) {
+//             this.celsius = celsius;
+//         }
+// // Đưa ra giá trị của độ C
+//         this.getCelsius = function () {
+//             return this.celsius;
+//         }
+//
+//         this.toFahrenheit = function () {
+//             return this.celsius * 9 / 5 + 32;
+//         }
+//
+//         this.toKenvin = function () {
+//             return this.celsius + 273.15;
+//         }
+//     }
+// // Khởi tạo đối tượng temperature
+//     let temperature = new Temperature();
+//     let celsius=prompt('Nhập vào độ C');
+//     temperature.setCelsius(celsius);
+//     alert("F: " + temperature.toFahrenheit());
+//     alert("K: " + temperature.toKenvin());
 
-        this.toFahrenheit = function () {
-            return this.celsius * 9 / 5 + 32;
-        }
-
-        this.toKenvin = function () {
-            return this.celsius + 273.15;
-        }
+class Temperature {
+    get name() {
+        return this._name;
     }
-// Khởi tạo đối tượng temperature
-    let temperature = new Temperature();
-    let celsius=prompt('Nhập vào độ C');
-    temperature.setCelsius(celsius);
-    alert("F: " + temperature.toFahrenheit());
-    alert("K: " + temperature.toKenvin());
+
+    set name(value) {
+        this._name = value;
+    }
+
+    get color() {
+        return this._color;
+    }
+
+    set color(value) {
+        this._color = value;
+    }
+    get celsius() {
+        return this._celsius;
+    }
+
+    set celsius(value) {
+        this._celsius = value;
+    }
+    constructor(celsius, name, color) {
+        this._celsius = celsius;
+        this._name = name;
+        this._color = color;
+    }
+    change(){
+        return this._celsius * 10 +300;
+    }
+}
+let temp = new Temperature(25,'hoan', 'do');
+
+console.log(temp.change());
 </script>
 </body>
 </html>

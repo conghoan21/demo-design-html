@@ -1,10 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Bài tập từ điển</title>
 </head>
 <body>
-$END$
+<input type="text" id="translate" >
+<button type="button" value="Dịch" onclick="translateDemo()">Dịch</button>
+<p id="result"></p>
+
+<script>
+    let vietnamese = ["1","2","3","4","5","6","7","8","9"];
+    let english = ["one","two","three","four","five","six","seven","eight","nine"];
+    function findText(text) {
+        for (let i = 0; i< vietnamese.length; i++){
+            if (text == vietnamese[i]){
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    function translateDemo() {
+        let text = document.getElementById("translate").value;
+        let index = findText(text);
+        if (index != -1){
+            document.getElementById("result").innerHTML = english[index];
+        }
+        else {
+            document.getElementById("result").innerHTML = "Khong tim thay";
+        }
+    }
+    // function checkText(){
+    //     let text = document.getElementById("translate").value;
+    //     for (count = 0; count < vietnamese.length; count++){
+    //         if (vietnamese[count].toString() === text){
+    //             document.getElementById("result").innerHTML = english[count];
+    //             break;
+    //         }else if (english[count].toString() === text) {
+    //             document.getElementById("result").innerHTML = vietnamese[count];
+    //             break;
+    //         }
+    //         else {
+    //             if (count==vietnamese.length-1){
+    //                 document.getElementById("result").innerHTML = "Khong tim thay";
+    //             }
+    //         }
+    //     }
+    // }
+
+</script>
 </body>
 </html>

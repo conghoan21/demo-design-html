@@ -1,10 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Exercise 3</title>
 </head>
 <body>
-$END$
+<script>
+    const NUMBER="0123456789";
+    let arr=[];
+
+    let n = parseInt(prompt("Enter array length: "));
+    while (n<=0){
+        n=parseInt(prompt("Error. Try again! "));
+    }
+    let count=0;
+    let rs="Các phần tử đã nhập là: <br>";
+    for(let i=0;i<n;i++){
+        arr[i]=prompt("Enter array["+i+"]: ");
+        rs+=arr[i] + "<br>";
+    }
+    rs+="<br> Các phần tử số trong mảng là: <br>"
+    for(let i=0;i<arr.length;i++){
+        if(NUMBER.includes(arr[i])){
+            rs+=arr[i]+"<br>";
+            count++;
+        }
+    }
+    rs+="<br>Có "+count+" phần tử số trong mảng.";
+    document.write(rs);
+</script>
 </body>
 </html>

@@ -1,10 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Exercise 5</title>
 </head>
 <body>
-$END$
+<script>
+    let str1 = prompt("Nhập chuỗi thứ nhất: ");
+    let str2 = prompt("Nhập chuỗi thứ hai: ");
+    let rs="Chuỗi 1: '"+str1+"'<br>";
+    rs += "Chuỗi 2: '"+str2+"'<br>";
+    let check =true;
+    if(str1.length!==str2.length){
+        check=false;
+    } else {
+        for(let i=0;i<str1.length;i++){
+            if(str1[i]!==str2[i]){
+                check=false;
+            }
+        }
+    }
+
+    if(check){
+        rs+="Hai chuỗi giống nhau!";
+    } else{
+        rs+="Hai chuỗi khác nhau!";
+    }
+    document.write(rs);
+</script>
 </body>
 </html>

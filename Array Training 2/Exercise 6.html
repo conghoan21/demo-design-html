@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Exercise 6</title>
 </head>
 <body>
-$END$
+<script>
+    let str = prompt("Nhập chuỗi kí tự: ");
+    let rs = "Chuỗi đã nhập là: '"+str+"'<br>";
+    for(let i=0;i<str.length;i++){
+        str=str.replace("-","_");
+    }
+    rs+="Chuỗi sau khi thay thế là: '"+str+"'<br>";
+    document.write(rs);
+</script>
 </body>
 </html>
